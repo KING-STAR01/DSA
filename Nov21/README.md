@@ -1,12 +1,13 @@
 # bitwise operators
 
-## as name tells thats these operators operats on bits
-
+### as name tells thats these operators operats on bits
+**_
 1). & (bitwise and)  
 2). | (bitwise or)  
 3). ^ (bitwise xor)  
 4). << (bitwise leftshift)  
 5). >> (bitwise rightshift)  
+_**
 
 ## & (bitwise and)  
 
