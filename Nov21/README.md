@@ -118,7 +118,18 @@ if we and with original number then its done we unset the rightmost set bit
 
 num & (num-1)   
 
+## getting the lowest set bit in a num  
 
+we simple need to find right most set bit.  
+to do this we need to create a suitable mask such that mask should a 1 at lowest set bit and remaining places are zero.   
+this can be done easily.  
+if we invert a number it means we flip all bits in a number  
+
+< let num=11011000 after inverting 00100111 this has no bit same in ith place i.e., and is zero if we add one to inverting number it will make first unset bit to set.  
+this unset bit which is set now is our lowest set bit.
+that's it  
+< ex: 11011000 inverting 00100111 adding one 00101111  
+< anding will give 00001000  
 
 
 
