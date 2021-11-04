@@ -131,6 +131,34 @@ if we invert a number it means we flip all bits in a number
 	ex: 11011000 inverting 00100111 adding one 00101111  
 	anding will give 00001000  
 
+## getting most significant bit  
+
+we nee to find the left most set bit
+
+log2(num) will be give right most set bit position.
+
+ro can use a for loop to check most significant bit position.
+
+
+## computing xor from 1 to n
+
+| number | binary-repr | xor from 1 to n |
+|:---|:---:| ---:|
+|1|00001|00001|
+|2|00010|00011|
+|3|00011|00000|
+|4|00100|00100|
+|5|00101|00001|
+|6|00110|00111|
+|7|00111|00000|
+|8|01000|01000|
+|9|01001|00001|
+|10|01010|01011|
+|11|01011|00000|
+|12|01100|01100|
+
+
+
 
 
 
