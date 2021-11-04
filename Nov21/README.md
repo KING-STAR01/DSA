@@ -165,43 +165,43 @@ ro can use a for loop to check most significant bit position.
 
 
 
-## checking if a number is a power of 2  
-
-every two power has only one set bit in it.  
-\_\_builtin\_popcount(num) will give us no of sets bits in num  
-
-if we subtract one from number that is power of 2 then all bits before set bit becomes 1  
-
-anding with original number will give us 0 this means that number is a power of 2.  
-
-
-##  some useful gcc bit functions.   
-
-builtin\_clz(num)  returns no of leading zeros  
-builtin\_ctz(num) returns no of trailing zeros   
-\_\_builtin\_popcount(num( returns no of set bits in num    
-
-## clearing all bits from LSB to ith bit
-
-to clear all bits form LSB to ith bit we should and with mask such that mask should have 0 form LSB to ith bit.
-preparing mask
-	mask = (1<<(i+1)-1);
-	mask=~mask
-	x&=mask
-explanation:
-1<<(i+1) creates a set bit in i+1 th location if we subtact one from it then it enables i bits after i+1 location and turnoff i+1th bit.  
-simple inverting bits means set ith bit to zeroth bit 0 and remaining 1.
-
-this is our required mask.
-
-
-## clearing all bits form MST to ith bit.  
-means need to clear first i bits from left. so we need to prepare a mask such that left to ith bit as 0 and remaining one's.
-	mask = (1<<i)-1;  ---> this is having ones from i-1th bit to zeroth bit(i to right zero bit)
-	num&=mask;   ---> anding with original number gives required result.
-	
-
-
+## checking if a number is a power of 2      
+  
+every two power has only one set bit in it.    
+\_\_builtin\_popcount(num) will give us no of sets bits in num    
+  
+if we subtract one from number that is power of 2 then all bits before set bit becomes 1    
+  
+anding with original number will give us 0 this means that number is a power of 2.    
+  
+  
+##  some useful gcc bit functions.     
+  
+builtin\_clz(num)  returns no of leading zeros    
+builtin\_ctz(num) returns no of trailing zeros     
+\_\_builtin\_popcount(num( returns no of set bits in num      
+  
+## clearing all bits from LSB to ith bit  
+  
+to clear all bits form LSB to ith bit we should and with mask such that mask should have 0 form LSB to ith bit.  
+preparing mask  
+	mask = (1<<(i+1)-1);  
+	mask=~mask  
+	x&=mask  
+explanation:  
+1<<(i+1) creates a set bit in i+1 th location if we subtact one from it then it enables i bits after i+1 location and turnoff i+1th bit.    
+simple inverting bits means set ith bit to zeroth bit 0 and remaining 1.  
+  
+this is our required mask.  
+  
+  
+## clearing all bits form MST to ith bit.    
+means need to clear first i bits from left. so we need to prepare a mask such that left to ith bit as 0 and remaining one's.  
+	mask = (1<<i)-1;  ---> this is having ones from i-1th bit to zeroth bit(i to right zero bit)  
+	num&=mask;   ---> anding with original number gives required result.  
+	  
+  
+  
 
 
 
