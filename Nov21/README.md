@@ -90,7 +90,7 @@ to check we can simply and with suitable mask(have ith bit set)
 
 ex: num=123  
 let ith bit =3  
-mask = 1<<3
+mask = 1<<3  
 num&(mask)?1:0  
 
 ## inverting every bit in number (also called one's complement)   
