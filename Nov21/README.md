@@ -56,4 +56,72 @@ ex: ~4
 	formula ~n = -(n+1)  
 
 
+# setting ith bit in a number  
+
+to set a ith bit in a number we should make a mask that has 1 at ith bit and remaining all 0 this can be done as 1\<\<i then oring with original number will set ith bit in numer.  
+ex: num=123  
+let ith bit = 3  
+mask=1<<3  
+num|=mask  
+
+## unsetting ith bit in a number   
+
+to unset a bit in ith position in a number we make a mask it has 0 in ith and all reaming positions has 1.  
+
+ex: num = 123  
+let ith bit =3  
+a=(1<<3) it has one in ith and all zeros in remaing positions. we can simpley invert it to make our mask  
+mask = (~(1<<3))  
+num&=mask  
+
+
+## toggling the ith bit  
+
+to toggle a bit using in number we can use ^(xor) operator with 1 if it has 1 in ith then it will become 0 if it has 0 then it has 1.  
+
+ex: num=123
+let ith bit = 3
+mask = 1<<3  
+num^=mask  
+
+## checking ith bit is set or not   
+
+to check we can simply and with suitable mask(have ith bit set)  
+
+ex: num=123  
+let ith bit =3  
+mask = 1<<3
+num&(mask)?1:0  
+
+## inverting every bit in number (also called one's complement)   
+
+we can simply use not operator to toggle every bit  
+
+ex: num=123  
+~num  
+
+## two's complement of a number  
+
+we can simply find one's complement and add one to it.  
+~num+1 is two's complement  
+-num simply negative of num is two's complement  
+
+
+## stripping off the lowest set bit  
+meaning we simple need to remove the right most set bit  
+let a num be 1100 right most set bit location is 2 from left to right.  
+to turn off it.  
+
+if we remove 1 from num then we invert all bits till right most set bit including right most
+so 1100 - 1 will be 1011  
+if we and with original number then its done we unset the rightmost set bit
+
+num & (num-1)   
+
+
+
+
+
+
+
 
