@@ -125,11 +125,11 @@ to do this we need to create a suitable mask such that mask should a 1 at lowest
 this can be done easily.  
 if we invert a number it means we flip all bits in a number  
 
-< let num=11011000 after inverting 00100111 this has no bit same in ith place i.e., and is zero if we add one to inverting number it will make first unset bit to set.  
-this unset bit which is set now is our lowest set bit.
-that's it  
-< ex: 11011000 inverting 00100111 adding one 00101111  
-< anding will give 00001000  
+	let num=11011000 after inverting 00100111 this has no bit same in ith place i.e., and is zero if we add one to inverting number it will make first unset bit to set.  
+	this unset bit which is set now is our lowest set bit.
+	that's it  
+	ex: 11011000 inverting 00100111 adding one 00101111  
+	anding will give 00001000  
 
 
 
