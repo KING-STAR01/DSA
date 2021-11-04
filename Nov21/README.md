@@ -144,20 +144,62 @@ ro can use a for loop to check most significant bit position.
 
 | number | binary-repr | xor from 1 to n |
 |:---|:---:| ---:|
-|1|00001|00001|
-|2|00010|00011|
-|3|00011|00000|
-|4|00100|00100|
-|5|00101|00001|
-|6|00110|00111|
-|7|00111|00000|
-|8|01000|01000|
-|9|01001|00001|
-|10|01010|01011|
-|11|01011|00000|
-|12|01100|01100|
+|1|00001|00001|   ---> `xor is one`  
+|2|00010|00011|   ----> `xor is num +1 `  
+|3|00011|00000|   ---> *xor becomes zero*  
+|4|00100|00100|    ----> xor same as num  
+|5|00101|00001|  ---> `xor is one`  
+|6|00110|00111|    ----> `xor is num +1 `  
+|7|00111|00000| ---> *xor becomes zero*  
+|8|01000|01000|   ---> xor same as num  
+|9|01001|00001|  ---> `xor becomes one`  
+|10|01010|01011|   ---> `xor is num+1`  
+|11|01011|00000|  ---> *xor becomes zero*    
+|12|01100|01100|  ----> xor same as num   
+
+	we can see that when num divided by if    
+	rem is 0 then xor from 1 to num is n.   
+	rem is 1 then xor from 1 to num is 1.   
+	rem is 2 then xor from 1 to num is n+1.  
+	rem is 3 then xor from 1 to num is 0.  
 
 
+
+## checking if a number is a power of 2  
+
+every two power has only one set bit in it.  
+\_\_builtin\_popcount(num) will give us no of sets bits in num  
+
+if we subtract one from number that is power of 2 then all bits before set bit becomes 1  
+
+anding with original number will give us 0 this means that number is a power of 2.  
+
+
+##  some useful gcc bit functions.   
+
+builtin\_clz(num)  returns no of leading zeros  
+builtin\_ctz(num) returns no of trailing zeros   
+\_\_builtin\_popcount(num( returns no of set bits in num    
+
+## clearing all bits from LSB to ith bit
+
+to clear all bits form LSB to ith bit we should and with mask such that mask should have 0 form LSB to ith bit.
+preparing mask
+	mask = (1<<(i+1)-1);
+	mask=~mask
+	x&=mask
+explanation:
+1<<(i+1) creates a set bit in i+1 th location if we subtact one from it then it enables i bits after i+1 location and turnoff i+1th bit.  
+simple inverting bits means set ith bit to zeroth bit 0 and remaining 1.
+
+this is our required mask.
+
+
+## clearing all bits form MST to ith bit.  
+means need to clear first i bits from left. so we need to prepare a mask such that left to ith bit as 0 and remaining one's.
+	mask = (1<<i)-1;  ---> this is having ones from i-1th bit to zeroth bit(i to right zero bit)
+	num&=mask;   ---> anding with original number gives required result.
+	
 
 
 
